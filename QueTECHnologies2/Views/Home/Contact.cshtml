@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+@section scripts
+{
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+       <!-- .page-title-container start -->
+<section class="page-title-container">
+
+    <!-- .container_12 start -->
+    <div class="container_12">
+
+        <!-- .page-title start -->
+        <div class="page-title grid_12">
+            <div class="title">
+                <h1>Contact us</h1>
+            </div>
+
+            <div class="subtitle">
+                <h3>Have a Question for Us?</h3>
+            </div>
+        </div><!-- .page-title end -->
+    </div><!-- .container_12 end -->
+</section><!-- .page-title-container end -->
+<!-- #content-wrapper start -->
+<section id="content-wrapper">
+
+    <!-- .container_12 start -->
+    <div class="container_12">
+
+        <!-- .grid_6 start -->
+        <article class="grid_6">
+
+            <!-- .map-info-container start -->
+            <section class=" map-info-container">
+                <div class="map_canvas"></div>
+
+                <!-- .info-container start -->
+                <section class="info-container">
+                    <h5>Contact Info</h5>
+
+                    <ul>
+                        <li>
+                            <span class="text-dark">Address: </span>
+                            Some Street, Sweet Park Avenue, Amsterdam, Europe
+                        </li>
+
+                        <li>
+                            <span class="text-dark">Telephone: </span>
+                            +00 000 0000
+                        </li>
+
+                        <li>
+                            <span class="text-dark">Email: </span>
+                            <a href="mailto:LiL-RiO@hotmail.com">LiL-RiO@hotmail.com</a>
+                        </li>
+                    </ul>
+
+                    <br />
+                    <br />
+
+                    <h5>Support Center</h5>
+                    <ul>
+                        <li>
+                            <span class="text-dark">Address: </span>
+                            Some Street, Sweet Park Avenue, Amsterdam, Europe
+                        </li>
+
+                        <li>
+                            <span class="text-dark">Telephone: </span>
+                            +00 000 0000
+                        </li>
+
+                        <li>
+                            <span class="text-dark">Email: </span>
+                            <a href="mailto:LiL-RiO@hotmail.com">LiL-RiO@hotmail.com</a>
+                        </li>
+                    </ul>
+                </section><!-- .info-container end -->
+            </section><!-- .map-info-container end -->
+        </article><!-- .grid_6 end -->
+        <!-- .grid_6 start -->
+        <div class="grid_6">
+            <section class="section-title left">
+                <h3>Have a Question for Us?</h3>
+            </section>
+
+            <p>
+                Hey, so you decided to lcontact us!  Please fill in the
+                form below and we’ll get back to you in 24 hours, except
+                on weekends. in that case, we’ll respond Monday morning.
+            </p>
+
+            <br />
+
+            <!--mail service start -->
+            <form class="form-horizontal" method="post">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="name">Name:</label>
+                        <div class="controls">
+                            <input type="text" class="form-control" id="name" name="name" data-val="true" data-val-required="*">
+                            <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="LastName">Last Name:</label>
+                        <div class="controls">
+                            <input type="text" class="form-control" id="LastName" name="LastName" data-val="true" data-val-required="*">
+                            <span class="field-validation-valid" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="email">Email:</label>
+                        <div class="controls">
+                            <input type="text" class="form-control" id="email" name="email" data-val="true" data-val-required="*" data-val-email="Not Valid">
+                            <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="subject">Subject:</label>
+                        <div class="controls">
+                            <input type="text" class="form-control" id="subject" name="subject" data-val="true" data-val-required="*">
+                            <span class="field-validation-valid" data-valmsg-for="subject" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="comment">Message:</label>
+                        <div class="controls">
+                            <textarea class="form-control" id="comment" rows="5" name="comment" data-val="true" data-val-required="*"></textarea>
+                            <span class="field-validation-valid" data-valmsg-for="comment" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </fieldset>
+                <h1> </h1>
+                <input type="submit" class="btn btn-danger" value="Submit" />
+            @if (ViewBag.MailSent != null && ViewBag.MailSent)
+            {
+                try { 
+                <div>Mail Sent!</div>
+            }
+                catch {
+                <div>Mail Wasn't Sent!</div>}
+            }
+            </form><!-- wpcf7 end -->
+        </div><!-- .grid_6 end -->
+
+    </div><!-- .container_12 end -->
+</section><!-- #content-wrapper end -->
+
+
